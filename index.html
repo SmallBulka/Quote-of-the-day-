@@ -4,25 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote of the day</title>
+    <script src="https://kit.fontawesome.com/b9e91f5c74.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+</div >
     <div class="conteiner">
+        
         <h2>Quote of the day</h2>
         <blockquote id="quote">Loading...</blockquote>
         <span id="author">Loading...</span>
         <div>
             <button onclick="getquote(apiUrl)">New Quote</button>
-        
-            <button onclick="tweet()"><img src="imang/twitter.png">Tweet</button>
+            <!-- <button onclick="tweet()"><img src="imang/twitter.png">Tweet</button> -->
+            <div class="share">
+                <button>Share</button>
+                
+                    <a onclick="tweet()"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a onclick="vk()"><i class="fa-brands fa-vk"></i></a>
+                    <a onclick="tg()"><i class="fa-brands fa-telegram"></i></a>
+                    <a onclick="red()"><i class="fa-brands fa-square-reddit"></i></a>
+                
+            </div>
+            
+        </div>
+            
         </div>
         
     </div>
-
-
-
-<script>
-const quote = document.getElementById("quote");
+    
+    <script>
+       const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 
 const apiUrl = "https://api.quotable.io/random";
@@ -39,7 +64,21 @@ getquote(apiUrl);
 function tweet(){
     window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + "---- by " + author.innerHTML, "Tweet Window", "width=600, height=300");
 }
+function vk(){
+    window.open("https://vk.com/intent/tweet?text=" + quote.innerHTML + "---- by " + author.innerHTML, "Tweet Window", "width=600, height=300");
+}
+function tg(){
+    window.open("tg://resolve?domain=" + quote.innerHTML + "---- by " + author.innerHTML, "Tweet Window", "width=600, height=300");
+}
+function red(){
+    window.open("https://www.reddit.com//intent/tweet?text=" + quote.innerHTML + "---- by " + author.innerHTML, "Tweet Window", "width=600, height=300");
+}
 
-</script>
+
+
+    </script>
+
+
+
 </body>
 </html>

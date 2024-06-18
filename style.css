@@ -8,8 +8,138 @@
     font-family: 'Playfair Display', serif;
 }
 body{
-    background: #5078F2;
+    background: #5078F2; 
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+    position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 100%
 }
+
+.area{
+    background: #5078F2;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(520deg);
+        opacity: 0;
+        border-radius: 70%;
+    }
+
+}
+
 .conteiner{
     background: #fff;
     width: 700px;
@@ -47,7 +177,7 @@ body{
 }
 .conteiner span{
     display: block;
-    margin-top: 10px; 
+    margin-top: 10px;  
     float: right;
     position: relative;
 }
@@ -61,29 +191,116 @@ body{
     left: -30px;
 }
 .conteiner div{
-    width: 100%;
-    margin-top: 50px;
+    /* width: 100%; */
+    margin-top: 40px;
     display: flex;
-    justify-content: center;
+
+    justify-content: space-evenly;
+    
+    align-items: baseline
 }
 .conteiner button{
-    background: rgb(23, 124, 229);
+    background: #6082e7;
     color: #fff;
     border-radius: 25px;
-    border: 1 px solid rgb(23, 124, 229);
+    border: none;
     width: 150px;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px;
+    padding: 20px;
     cursor: pointer;
+    font-size: 16px;
 }
-.conteiner button img{
-    width: 20px;
-    margin-right: 10px;
+
+
+
+
+
+
+
+
+
+
+
+.share{
+    width: 150px;
+    height: 50px;
+    background: #f1f1f1;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: .3s linear;
+    bottom: -1.5px;
+    
+    
 }
-.conteiner button:nth-child(2){
-    background: transparent;
-    color: #333;
+/* .share:hover{
+/* transform: scale(1.1); */
+/* } */
+.share button{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background: #4b4d4b;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 16px;
+    z-index: 999;
+    transition: .6s linear;
+    border-radius: 25px;
+    
+    
+    
+    
 }
+.share:hover button{
+    transform: translateX(-100%);
+    transition-delay: .3s;
+    
+}
+.share a{
+    flex: 1;
+    font-size: 24px;
+    color: #000;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 0.3s linear;
+    padding: 5px;
+
+}
+.share:hover a{
+    opacity: 1;
+    transform: translateX(0);
+}
+.share a:nth-last-of-type(1){
+    transition-delay: 1s;
+}
+.share a:nth-last-of-type(2){
+    transition-delay: 0.8s;
+}
+.share a:nth-last-of-type(3){
+    transition-delay: 0.6s;
+}
+.share a:nth-last-of-type(4){
+    transition-delay: 0.4s;
+}
+
+
+
+@media (max-width: 768px) {
+    /* отменяем обтекание для логотипа и выравниваем по центру*/
+    .conteiner {
+        width: 500px;
+       
+    }
+    
+}
+
+    
